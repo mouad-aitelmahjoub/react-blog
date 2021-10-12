@@ -1,6 +1,7 @@
 .top {
   width: 100%;
   height: $header-height;
+  background-color: #fff;
   position: sticky;
   top: 0;
   @include flex(center, space-between);

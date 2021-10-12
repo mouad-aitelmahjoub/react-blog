@@ -1,0 +1,61 @@
+.sidebar {
+  flex: 3;
+  margin: 2rem;
+  padding-bottom: 3rem;
+  background-color: #fdfbfb;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__title {
+    font-family: "Varela Round", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #222;
+    margin: 1.2rem;
+    padding: 0.5rem;
+    width: 80%;
+    border-top: 1px solid #a7a4a4;
+    border-bottom: 1px solid #a7a4a4;
+    line-height: 2rem;
+    text-align: center;
+  }
+  &__img {
+    height: 36rem;
+    margin-top: 15px;
+  }
+  &__descr {
+    padding: 3rem;
+    font-size: 1.4rem;
+  }
+
+  &__list {
+    margin-bottom: 3rem;
+
+    &-item {
+      display: inline-block;
+      width: 50%;
+      margin-top: 1.4rem;
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+  }
+
+  &__social {
+    margin-top: 1.5rem;
+    width: 25rem;
+    @include flex(center, center);
+  }
+
+  &__icon {
+    font-size: 1.6rem;
+    margin-left: 1rem;
+    cursor: pointer;
+  }
+}
