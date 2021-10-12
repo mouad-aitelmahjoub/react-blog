@@ -1,6 +1,6 @@
-import Header from "../Header"
-import Posts from "../Posts"
-import Sidebar from "../Sidebar"
+import Header from "../components/Header"
+import Posts from "../components/Posts"
+import Sidebar from "../components/Sidebar"
 
 function Homepage() {
   return (

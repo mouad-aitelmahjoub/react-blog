@@ -6,6 +6,8 @@
   top: 0;
   @include flex(center, space-between);
   font-size: 1.8rem;
+  z-index: 999;
+
   &__left,
   &__right {
     flex: 3;

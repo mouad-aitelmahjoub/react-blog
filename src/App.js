@@ -1,4 +1,4 @@
-import Homepage from "./components/pages/Homepage"
+import Homepage from "./pages/Homepage"
 import Topbar from "./components/Topbar"
 
 function App() {
