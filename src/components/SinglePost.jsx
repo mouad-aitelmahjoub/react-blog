@@ -2,22 +2,22 @@ import Leafs from "../assets/images/leafs.jpg"
 
 const SinglePost = () => {
   return (
-    <div className="post">
-      <img src={Leafs} className="post__image" alt="" />
-      <div className="post__info">
-        <div className="post__categories">
-          <span className="post__categories-item">
-            <i class="bx bxs-music"></i> Music
+    <div className="singlepost">
+      <img src={Leafs} className="singlepost__image" alt="" />
+      <div className="singlepost__info">
+        <div className="singlepost__categories">
+          <span className="singlepost__categories-item">
+            <i className="bx bxs-music"></i> Music
           </span>
-          <span className="post__categories-item">
-            <i class="bx bxs-happy-heart-eyes"></i> Life
+          <span className="singlepost__categories-item">
+            <i className="bx bxs-happy-heart-eyes"></i> Life
           </span>
         </div>
-        <div className="post__title">Lorem ipsum dolor sit.</div>
+        <div className="singlepost__title">Lorem ipsum dolor sit.</div>
         <hr />
-        <span className="post__date">1 hour ago</span>
+        <span className="singlepost__date">1 hour ago</span>
       </div>
-      <p className="post__description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse quia enim temporibus ea optio sapiente excepturi, maxime numquam praesentium nisi, modi dicta aliquid est quas, obcaecati veritatis deserunt hic vero?</p>
+      <p className="singlepost__description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse quia enim temporibus ea optio sapiente excepturi, maxime numquam praesentium nisi, modi dicta aliquid est quas, obcaecati veritatis deserunt hic vero?</p>
     </div>
   )
 }
