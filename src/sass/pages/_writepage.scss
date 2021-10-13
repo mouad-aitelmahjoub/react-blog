@@ -1,0 +1,51 @@
+.writepage {
+  padding-top: 5rem;
+
+  &__image {
+    margin-left: 15rem;
+    width: 70vw;
+    height: 25rem;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  &__form {
+    position: relative;
+  }
+  &__formgroup {
+    margin-left: 15rem;
+    display: flex;
+    align-items: center;
+    //justify-content: center;
+  }
+  &__icon {
+    font-size: 2.5rem;
+    color: #999;
+    cursor: pointer;
+  }
+  &__input {
+    font-size: 3rem;
+    border: none;
+    padding: 2rem;
+    width: 70vw;
+
+    &:focus {
+      outline: none;
+    }
+    &-text {
+      font-size: 2rem;
+      height: 50vh;
+    }
+  }
+  &__submit {
+    position: absolute;
+    top: 2rem;
+    right: 5rem;
+    color: white;
+    background-color: teal;
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1.6rem;
+    cursor: pointer;
+  }
+}

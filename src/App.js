@@ -1,12 +1,13 @@
-//import Homepage from "./pages/Homepage"
 import Topbar from "./components/Topbar"
-import Postpage from "./pages/Postpage"
+//import Homepage from "./pages/Homepage"
+//import Postpage from "./pages/Postpage"
+import Writepage from "./pages/Writepage"
 
 function App() {
   return (
     <div className="App">
       <Topbar />
-      <Postpage />
+      <Writepage />
     </div>
   )
 }

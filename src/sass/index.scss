@@ -4,8 +4,9 @@
 
 @import "./components/topbar";
 @import "./components/header";
-@import "./components/homepage";
 @import "./components/sidebar";
-@import "./components/postpage";
+@import "./pages/homepage";
+@import "./pages/postpage";
+@import "./pages/writepage";
 @import "./components/posts";
 @import "./components/single-post";
