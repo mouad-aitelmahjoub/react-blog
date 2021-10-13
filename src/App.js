@@ -1,5 +1,6 @@
 import Topbar from "./components/Topbar"
-import Login from "./pages/Login"
+import Register from "./pages/Register"
+//import Login from "./pages/Login"
 //import Settings from "./pages/Settings"
 //import Homepage from "./pages/Homepage"
 //import Postpage from "./pages/Postpage"
@@ -9,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <Topbar />
-      <Login />
+      <Register />
     </div>
   )
 }
