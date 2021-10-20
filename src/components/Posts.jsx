@@ -1,14 +1,11 @@
 import SinglePost from "./SinglePost"
 
-const Posts = () => {
+const Posts = ({ posts }) => {
   return (
     <div className="posts">
-      <SinglePost />
-      <SinglePost />
-      <SinglePost />
-      <SinglePost />
-      <SinglePost />
-      <SinglePost />
+      {posts.map((post, index) => (
+        <SinglePost key={index} post={post} />
+      ))}
     </div>
   )
 }

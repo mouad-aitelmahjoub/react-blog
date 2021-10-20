@@ -1,23 +1,26 @@
-import Leafs from "../assets/images/leafs.jpg"
+import { Link } from "react-router-dom"
+import defaultImage from "../assets/images/paper-note.jpg"
 
-const SinglePost = () => {
+const SinglePost = ({ post }) => {
+  const postImage = post.image ? post.image : defaultImage
   return (
     <div className="singlepost">
-      <img src={Leafs} className="singlepost__image" alt="" />
+      <img src={postImage} className="singlepost__image" alt="" />
       <div className="singlepost__info">
         <div className="singlepost__categories">
-          <span className="singlepost__categories-item">
-            <i className="bx bxs-music"></i> Music
-          </span>
-          <span className="singlepost__categories-item">
-            <i className="bx bxs-happy-heart-eyes"></i> Life
-          </span>
+          {post.categories.map((category, index) => (
+            <span className="singlepost__categories-item">
+              <i className="bx bxs-music"></i> {category.name}
+            </span>
+          ))}
         </div>
-        <div className="singlepost__title">Lorem ipsum dolor sit.</div>
+        <Link to={`/post/${post._id}`}>
+          <div className="singlepost__title">{post.title}</div>
+        </Link>
         <hr />
-        <span className="singlepost__date">1 hour ago</span>
+        <span className="singlepost__date">{new Date(post.createdAt).toDateString()}</span>
       </div>
-      <p className="singlepost__description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse quia enim temporibus ea optio sapiente excepturi, maxime numquam praesentium nisi, modi dicta aliquid est quas, obcaecati veritatis deserunt hic vero?</p>
+      <p className="singlepost__description">{post.description}</p>
     </div>
   )
 }
