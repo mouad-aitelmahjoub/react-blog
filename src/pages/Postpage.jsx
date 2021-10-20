@@ -7,15 +7,15 @@ import axios from "axios"
 function Postpage() {
   const [post, setPost] = useState({})
 
-  const PostId = useLocation().pathname.split("/")[2]
+  const postId = useLocation().pathname.split("/")[2]
 
   useEffect(() => {
     const fetchPost = async () => {
-      const response = await axios.get("/post/" + PostId)
+      const response = await axios.get("/post/" + postId)
       setPost(response.data)
     }
     fetchPost()
-  }, [])
+  }, [postId])
 
   const postImage = post.image ? post.image : defaultImage
   return (

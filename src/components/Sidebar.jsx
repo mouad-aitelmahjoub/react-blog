@@ -1,6 +1,17 @@
+import axios from "axios"
+import { useEffect, useState } from "react"
 import AboutMeImg from "../assets/images/woman-profile.jpg"
 
 const Sidebar = () => {
+  const [categories, setCategories] = useState([])
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      const response = await axios.get("/category")
+      setCategories(response.data)
+    }
+    fetchCategories()
+  }, [])
   return (
     <div className="sidebar">
       <div className="sidebar__item">
@@ -11,12 +22,11 @@ const Sidebar = () => {
       <div className="sidebar__item">
         <span className="sidebar__title">Categories</span>
         <ul className="sidebar__list">
-          <li className="sidebar__list-item">Life</li>
-          <li className="sidebar__list-item">Music</li>
-          <li className="sidebar__list-item">Style</li>
-          <li className="sidebar__list-item">Sport</li>
-          <li className="sidebar__list-item">Tech</li>
-          <li className="sidebar__list-item">Cinema</li>
+          {categories.map((category) => (
+            <li key={category._id} className="sidebar__list-item">
+              {category.name}
+            </li>
+          ))}
         </ul>
       </div>
       <div className="sidebar__item">
