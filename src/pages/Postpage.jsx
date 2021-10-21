@@ -3,6 +3,7 @@ import defaultImage from "../assets/images/paper-note.jpg"
 import { useEffect, useState } from "react"
 import { useLocation } from "react-router"
 import axios from "axios"
+import { Link } from "react-router-dom"
 
 function Postpage() {
   const [post, setPost] = useState({})
@@ -32,7 +33,10 @@ function Postpage() {
           </h1>
           <div className="post__info">
             <span className="post__author">
-              <i className="bx bxs-pen"></i> Author : <b>{post.username}</b>
+              <i className="bx bxs-pen"></i> Author :
+              <Link to={`/?user=${post.username}`}>
+                <b>{post.username}</b>
+              </Link>
             </span>
             <span className="post__date">
               {new Date(post.createdAt).toDateString()} <i className="bx bxs-calendar"></i>

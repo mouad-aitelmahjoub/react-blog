@@ -1,5 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 import AboutMeImg from "../assets/images/woman-profile.jpg"
 
 const Sidebar = () => {
@@ -24,7 +25,7 @@ const Sidebar = () => {
         <ul className="sidebar__list">
           {categories.map((category) => (
             <li key={category._id} className="sidebar__list-item">
-              {category.name}
+              <Link to={`/?category=${category.name}`}>{category.name}</Link>
             </li>
           ))}
         </ul>
