@@ -6,9 +6,10 @@ import Homepage from "./pages/Homepage"
 import Postpage from "./pages/Postpage"
 import Writepage from "./pages/Writepage"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import { useSelector } from "react-redux"
 
 function App() {
-  const user = false
+  const user = useSelector((state) => state.user)
   return (
     <Router>
       <Topbar />
@@ -16,10 +17,10 @@ function App() {
         <Route path="/" exact>
           <Homepage />
         </Route>
-        <Route path="/register">{user ? <Homepage /> : <Register />}</Route>
-        <Route path="/login">{user ? <Homepage /> : <Login />}</Route>
-        <Route path="/write">{user ? <Writepage /> : <Login />}</Route>
-        <Route path="/settings">{user ? <Settings /> : <Login />}</Route>
+        <Route path="/register">{user.username ? <Homepage /> : <Register />}</Route>
+        <Route path="/login">{user.username ? <Homepage /> : <Login />}</Route>
+        <Route path="/write">{user.username ? <Writepage /> : <Login />}</Route>
+        <Route path="/settings">{user.username ? <Settings /> : <Login />}</Route>
         <Route path="/post/:postId">
           <Postpage />
         </Route>
