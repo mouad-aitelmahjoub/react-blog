@@ -9,8 +9,8 @@ const SinglePost = ({ post }) => {
       <div className="singlepost__info">
         <div className="singlepost__categories">
           {post.categories.map((category, index) => (
-            <span className="singlepost__categories-item">
-              <i className="bx bxs-music"></i> {category.name}
+            <span key={index} className="singlepost__categories-item">
+              <i className="bx bxs-music"></i> {category}
             </span>
           ))}
         </div>

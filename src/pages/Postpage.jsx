@@ -4,11 +4,12 @@ import { useEffect, useState } from "react"
 import { useLocation } from "react-router"
 import axios from "axios"
 import { Link } from "react-router-dom"
-
+import { useSelector } from "react-redux"
 function Postpage() {
   const [post, setPost] = useState({})
 
   const postId = useLocation().pathname.split("/")[2]
+  const user = useSelector((state) => state.user)
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -19,6 +20,7 @@ function Postpage() {
   }, [postId])
 
   const postImage = post.image ? post.image : defaultImage
+  const isAuthor = user.username === post.username ? true : false
   return (
     <div className="postpage">
       <div className="post">
@@ -26,10 +28,12 @@ function Postpage() {
           <img src={postImage} alt="" className="post__image" />
           <h1 className="post__title">
             {post.title}
-            <div className="post__actions">
-              <i className="post__icon post__icon-edit bx bxs-message-square-edit"></i>
-              <i className="post__icon post__icon-delete bx bxs-trash-alt"></i>
-            </div>
+            {isAuthor && (
+              <div className="post__actions">
+                <i className="post__icon post__icon-edit bx bxs-message-square-edit"></i>
+                <i className="post__icon post__icon-delete bx bxs-trash-alt"></i>
+              </div>
+            )}
           </h1>
           <div className="post__info">
             <span className="post__author">
