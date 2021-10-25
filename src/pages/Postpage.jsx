@@ -19,6 +19,14 @@ function Postpage() {
     fetchPost()
   }, [postId])
 
+  const handlePostDelete = async () => {
+    try {
+      const response = await axios.delete("/post/" + post._id, { data: { username: user.username } })
+      window.location.replace("/")
+    } catch (error) {
+      console.log(error)
+    }
+  }
   const postImage = post.image ? post.image : defaultImage
   const isAuthor = user.username === post.username ? true : false
   return (
@@ -30,8 +38,8 @@ function Postpage() {
             {post.title}
             {isAuthor && (
               <div className="post__actions">
-                <i className="post__icon post__icon-edit bx bxs-message-square-edit"></i>
-                <i className="post__icon post__icon-delete bx bxs-trash-alt"></i>
+                {/* <i className="post__icon post__icon-edit bx bxs-message-square-edit"></i> */}
+                <i className="post__icon post__icon-delete bx bxs-trash-alt" onClick={handlePostDelete}></i>
               </div>
             )}
           </h1>

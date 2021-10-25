@@ -20,7 +20,7 @@ function Writepage() {
     }
     try {
       const response = await axios.post("/post", newPost)
-      console.log(response.data)
+      window.location.replace("/post/" + response.data._id)
     } catch (error) {
       console.log(error)
     }
